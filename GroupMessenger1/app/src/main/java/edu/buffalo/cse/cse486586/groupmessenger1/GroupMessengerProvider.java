@@ -13,16 +13,13 @@ import java.io.IOException;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 
-/**
+/*
  * GroupMessengerProvider is a key-value table. We do not implement full support for SQL as
  * a usual ContentProvider does. We re-purpose ContentProvider's interface to use it as a
  * key-value table.
- * 
  * http://developer.android.com/guide/topics/providers/content-providers.html
  * http://developer.android.com/reference/android/content/ContentProvider.html
- * 
  * Two main methods to implement : insert() and query().
- *
  */
 public class GroupMessengerProvider extends ContentProvider {
     static final String TAG = GroupMessengerProvider.class.getSimpleName();
@@ -37,9 +34,7 @@ public class GroupMessengerProvider extends ContentProvider {
         // Need not to implement this for this project.
         return null;
     }
-    
-    
-    
+  
     /* ---------------------------------------------------------------------------------
     * @Override
     * @name insert() 
