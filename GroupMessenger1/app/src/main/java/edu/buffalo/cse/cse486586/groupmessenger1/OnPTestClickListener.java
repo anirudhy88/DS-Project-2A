@@ -86,8 +86,8 @@ public class OnPTestClickListener implements OnClickListener {
     
     /* ---------------------------------------------------------------------
     * @name   testInsert() 
-    * @desc   This method uses ContentResolver.insert() to insert values into the 
-              ContentProvider.
+    * @desc   This method uses ContentResolver.insert() to insert values into  
+              the ContentProvider.
     * @param  None
     * @return true if the insertions were successful. Otherwise, false.
     ---------------------------------------------------------------------- */
@@ -148,7 +148,6 @@ public class OnPTestClickListener implements OnClickListener {
                     resultCursor.close();
                     throw new Exception();
                 }
-
                 resultCursor.close();
             }
         } catch (Exception e) {
