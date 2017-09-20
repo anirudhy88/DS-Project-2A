@@ -38,12 +38,17 @@ public class GroupMessengerProvider extends ContentProvider {
         return null;
     }
     
-    // --------------------------------------------------------------------
-    // @Override   insert()
-    // This method writes ContentValues which will have two columns (a key  
-    // and a value column) and one row that contains the actual (key, value) 
-    // pair into the file system. Storage option used: simple file-system storage   
-    // ---------------------------------------------------------------------   
+    
+    
+    /* ---------------------------------------------------------------------------------
+    * @Override
+    * @name insert() 
+    * @desc This method writes ContentValues which will have two columns (a key  
+            and a value column) and one row that contains the actual (key, value) 
+            pair into the file system. Storage option used: simple file-system storage   
+    * @param uri, values
+    * @return the URI
+    ---------------------------------------------------------------------------------- */
     public Uri insert(Uri uri, ContentValues values) {
         // Need to get contents out of the variable "values" of the type "ContentValues"
         String key = (String)values.get("key");
@@ -85,11 +90,13 @@ public class GroupMessengerProvider extends ContentProvider {
         return 0;
     }
 
-    // ----------------------------------------------------------------------------------------
-    // @Override   query()
-    // This method returns a Cursor object containing the result to the requested query 
-    // ----------------------------------------------------------------------------------------
-    @Override
+    /* ---------------------------------------------------------------------------------
+    * @Override
+    * @name query() 
+    * @desc This method returns a Cursor object containing the result to the requested query 
+    * @param uri, projection, selection, selectionArgs, sortOrder
+    * @return the Cursor
+    ---------------------------------------------------------------------------------- */
     public Cursor query(Uri uri, String[] projection, String selection, String[] selectionArgs,
                         String sortOrder) {
         // Open the file and search for the row
