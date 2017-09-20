@@ -7,38 +7,23 @@ import android.os.Bundle;
 import android.text.method.ScrollingMovementMethod;
 import android.view.Menu;
 import android.widget.TextView;
-import android.app.Activity;
 import android.content.Context;
 import android.os.AsyncTask;
-import android.os.Bundle;
-import android.provider.ContactsContract;
 import android.telephony.TelephonyManager;
 import android.util.Log;
-import android.util.StringBuilderPrinter;
-import android.view.KeyEvent;
 import android.view.View;
-import android.view.View.OnKeyListener;
 import android.widget.EditText;
-import android.widget.TextView;
 
 import java.io.BufferedReader;
-import java.io.DataInputStream;
 import java.io.DataOutputStream;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.io.ObjectInput;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
 
 import java.net.InetAddress;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.net.UnknownHostException;
-
-import edu.buffalo.cse.cse486586.groupmessenger1.R;
-
 
 // GroupMessengerActivity is the main Activity.
 public class GroupMessengerActivity extends Activity {
