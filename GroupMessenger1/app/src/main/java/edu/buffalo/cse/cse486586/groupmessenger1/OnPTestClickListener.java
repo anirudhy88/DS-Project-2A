@@ -83,7 +83,6 @@ public class OnPTestClickListener implements OnClickListener {
             mTextView.append("Query fail\n");
         }
     }
-
     
     /* ---------------------------------------------------------------------
     * @name   testInsert() 
@@ -155,7 +154,6 @@ public class OnPTestClickListener implements OnClickListener {
         } catch (Exception e) {
             return false;
         }
-
         return true;
     }
 }
