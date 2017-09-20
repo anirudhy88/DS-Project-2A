@@ -31,6 +31,7 @@ import java.io.InputStreamReader;
 import java.io.ObjectInput;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+
 import java.net.InetAddress;
 import java.net.ServerSocket;
 import java.net.Socket;
@@ -80,22 +81,18 @@ public class GroupMessengerActivity extends Activity {
             return;
         }
         
-         // Using the TextView to display messages to make debugging easier.
+        // Using the TextView to display messages to make debugging easier.
         TextView tv = (TextView) findViewById(R.id.textView1);
         tv.setMovementMethod(new ScrollingMovementMethod());
-        
-        
+               
         // Registers OnPTestClickListener for "button1" in the layout, which is the "PTest" button.
         // OnPTestClickListener demonstrates how to access a ContentProvider. 
         findViewById(R.id.button1).setOnClickListener(
                 new OnPTestClickListener(tv, getContentResolver()));
-
-        
-        /* 
-         *  Registering and implementing an OnClickListener for the "Send" button.
-         *  Getting the message from the input box (EditText) and sending it to other AVDs.
-         *  Creating editText to display
-         */
+         
+        // Registering and implementing an OnClickListener for the "Send" button.
+        // Getting the message from the input box (EditText) and sending it to other AVDs.
+        // Creating editText to display 
         final EditText editText = (EditText) findViewById(R.id.editText1);
         findViewById(R.id.button4).setOnClickListener(new View.OnClickListener() {
             @Override
