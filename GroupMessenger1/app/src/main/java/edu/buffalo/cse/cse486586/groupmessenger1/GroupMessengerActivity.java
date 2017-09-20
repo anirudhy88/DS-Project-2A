@@ -103,12 +103,19 @@ public class GroupMessengerActivity extends Activity {
         return true;
     }
 
-    // ---------------------------------------------------------------------
-    // Server Task Implementation
-    // Receives messages and passes them to onProgressUpdate()
-    // ---------------------------------------------------------------------
+    /* ---------------------------------------------------------------------
+    * Server Task Implementation
+    * Receives messages and passes them to onProgressUpdate()
+     -------------------------------------------------------------------- */
     private class ServerTask extends AsyncTask<ServerSocket, String, Void> {
-
+    
+        /* -------------------------------------------------------------------------------
+        * @Override
+        * @name doInBackground() 
+        * @desc This method does all the tasks that are required, in the background.  
+        * @param sockets
+        * @return Void
+        ---------------------------------------------------------------------------------- */
         @Override
         protected Void doInBackground(ServerSocket... sockets) {
             ServerSocket serverSocket = sockets[0];
@@ -133,11 +140,14 @@ public class GroupMessengerActivity extends Activity {
                 }
             }
         }
- 
-        // ---------------------------------------------------------------------
-        // onProgressUpdate()
-        // Displays what is received in doInBackground().
-        // --------------------------------------------------------------------- 
+        
+        /* -------------------------------------------------------------------------------
+        * @Override
+        * @name onProgressUpdate() 
+        * @desc This method displays what is received in doInBackground().  
+        * @param strings
+        * @return void
+        ---------------------------------------------------------------------------------- */
         protected void onProgressUpdate(String...strings) {
             String strReceived = strings[0].trim();
             TextView remoteTextView = (TextView) findViewById(R.id.textView1);
@@ -161,21 +171,22 @@ public class GroupMessengerActivity extends Activity {
         }
     }
 
-    // ---------------------------------------------------------------
-    // ClientTask is an AsyncTask that should send a string over the
-    // network. It is created by ClientTask.executeOnExecutor() call 
-    // whenever OnKeyListener.onKey() detects an enter key press event.
-    // ---------------------------------------------------------------
+    /* ---------------------------------------------------------------
+    * ClientTask is an AsyncTask that should send a string over the
+    * network. It is created by ClientTask.executeOnExecutor() call 
+    * whenever OnKeyListener.onKey() detects an enter key press event.
+    ----------------------------------------------------------------*/
     private class ClientTask extends AsyncTask<String, Void, Void> {
 
-        // -------------------------------------------
-        // @Override - doInBackground()
-        // Method to send messages to all the AVD's 
-        // including myself
-        // -------------------------------------------
+        /* -------------------------------------------------------------------------------
+        * @Override
+        * @name doInBackground() 
+        * @desc This method sends messages to all the AVD's  
+        * @param msgs
+        * @return Void
+        ---------------------------------------------------------------------------------- */
         protected Void doInBackground(String... msgs) {
-            try {
-                
+            try { 
                 String[] remotePorts = {REMOTE_PORT0, REMOTE_PORT1, REMOTE_PORT2, REMOTE_PORT3, REMOTE_PORT4};
                 for(int i = 0; i < 5; i++) {
                     Socket socket = new Socket(InetAddress.getByAddress(new byte[]{10, 0, 2, 2}),
